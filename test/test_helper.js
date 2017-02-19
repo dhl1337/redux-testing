@@ -4,7 +4,10 @@
 // set up chai-jquery
 
 import jsdom from 'jsdom';
+import jquery from 'jquery';
 
 //window -> global
 global.document = jsdom.jsdom('<!DOCTYPE html><html><body></body></html>');
 global.window = global.document.defaultView;
+
+const $ = jquery(global.window);
