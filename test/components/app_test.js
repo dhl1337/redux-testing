@@ -11,12 +11,13 @@ import App from '../../src/components/app';
 //expect
 
 describe('App', () => {
+  let component;
 
-  it('shows the correct text', () => {
-    // create an instance of app
-    const component = renderComponent(App);
-
-    expect(component).to.contain('React simple starter');
+  beforeEach(() => {
+    component = renderComponent(App);
   });
 
+  it('shows a comment box', () => {
+    expect(component.find('.comment-box')).to.exist;
+  });
 });
